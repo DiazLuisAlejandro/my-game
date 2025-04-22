@@ -16,15 +16,15 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class menu3Controller {
-
-    @FXML
-    TextField userField;
-
-    @FXML
-    PasswordField passwordField;
     
     @FXML
-    Button playButton;
+    Text text;
+
+    @FXML
+    Button playButton1;
+    
+    @FXML
+    Button playButton2;
 
     @FXML
     Button editButton;
@@ -34,6 +34,7 @@ public class menu3Controller {
 
     @FXML
     void initialize() {
+        text.setText("Hola");
 
     }
 
@@ -44,22 +45,30 @@ public class menu3Controller {
      * @throws SQLException
      */
     @FXML
-    protected void onPlayButtonClick() throws IOException, SQLException {
-        String usuarioString = userField.getText();
-        String contraseniaString = passwordField.getText();
-        UsuarioEntity usuarioLogin = new UsuarioServiceModel().obtenerOneUsuario(usuarioString);
-        if (usuarioLogin == null) {
-            return;
-        }
-        if (usuarioLogin.getContrasenia().equals(contraseniaString)) {
-        Stage stage = (Stage) playButton.getScene().getWindow();
+    protected void onPlay1ButtonClick() throws IOException, SQLException {
+        Stage stage = (Stage) playButton1.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("menu5.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 360, 500);
-        stage.setTitle("Juego");
+        stage.setTitle("Tres en Raya");
         stage.setScene(scene);
         stage.show();
-        }
     }
+        /**
+     * Metodo que te lleva a la pestaña "Jugar"
+     * 
+     * @throws IOException
+     * @throws SQLException
+     */
+    @FXML
+    protected void onPlay2ButtonClick() throws IOException, SQLException {
+        Stage stage = (Stage) playButton2.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("menu5.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 360, 500);
+        stage.setTitle("Quiz");
+        stage.setScene(scene);
+        stage.show();
+    }
+    
 
     /**
      * Metodo que te lleva a la pestaña "Editar"
