@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.menu3Controller">
+   <children>
+      <Label contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="User: ">
+         <graphic>
+            <TextField fx:id="userField"/>
+         </graphic>
+      </Label>
+      <Label contentDisplay="RIGHT" layoutX="10.0" layoutY="34.0" text="Password: ">
+         <graphic>
+            <PasswordField fx:id="passwordField" />
+         </graphic>
+      </Label>
+      <Button fx:id="editButton" mnemonicParsing="false" onAction="#onEditButtonClick" text="Editar" />
+      <Button fx:id="playButton" layoutX="279.0" layoutY="234.0" mnemonicParsing="false" onAction="#onPlayButtonClick" text="Jugar" />
+      <Button fx:id="returnButton" layoutX="279.0" layoutY="246.0" mnemonicParsing="false" onAction="#onReturnButtonClick" text="Regresar" />
+   </children>
+</VBox>
