@@ -18,8 +18,8 @@
          </children>
       </HBox>
       <Button fx:id="editButton" mnemonicParsing="false" onAction="#onEditButtonClick" text="Editar" />
-      <Button fx:id="playButton1" layoutX="279.0" layoutY="234.0" mnemonicParsing="false" onAction="#onPlay1ButtonClick" text="3 en raya" />
-      <Button fx:id="playButton2" layoutX="284.0" layoutY="198.0" mnemonicParsing="false" onAction="#onPlay2ButtonClick" text="Quiz" />
+      <Button fx:id="playButton" layoutX="279.0" layoutY="234.0" mnemonicParsing="false" onAction="#onPlay1ButtonClick" text="3 en raya" />
+      <Button fx:id="playButton1" layoutX="284.0" layoutY="198.0" mnemonicParsing="false" onAction="#onPlayButtonClick" text="Quiz" />
       <Button fx:id="returnButton" layoutX="279.0" layoutY="246.0" mnemonicParsing="false" onAction="#onReturnButtonClick" text="Regresar" />
    </children>
 </VBox>
