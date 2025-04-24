@@ -62,7 +62,7 @@ public class menu3Controller {
     @FXML
     protected void onPlay2ButtonClick() throws IOException, SQLException {
         Stage stage = (Stage) playButton2.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("menu5.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("menu6.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 360, 500);
         stage.setTitle("Quiz");
         stage.setScene(scene);

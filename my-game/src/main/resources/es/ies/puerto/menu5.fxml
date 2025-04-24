@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="386.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.menu5Controller">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="386.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.menu5Controller">
    <children>
       <HBox alignment="CENTER" layoutX="10.0" layoutY="302.0" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="363.7294921875" />
+            <Text fx:id="textTurn" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="363.7294921875" />
          </children>
       </HBox>
       <GridPane maxHeight="240.0" maxWidth="240.0" minHeight="240.0" minWidth="240.0" prefHeight="240.0" prefWidth="240.0">
@@ -31,7 +31,7 @@
          <children>
             <Button fx:id="button1" contentDisplay="CENTER" layoutX="170.0" layoutY="170.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onAction="#onButton1" prefHeight="80.0" prefWidth="80.0">
                <graphic>
-                  <ImageView fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="im1" fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@image/placeholder.png" />
                      </image>
@@ -40,7 +40,7 @@
             </Button>
             <Button fx:id="button2" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onAction="#onButton2" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="1">
                <graphic>
-                  <ImageView fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="im2" fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@image/placeholder.png" />
                      </image>
@@ -49,7 +49,7 @@
             </Button>
             <Button fx:id="button3" contentDisplay="CENTER" layoutX="90.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onAction="#onButton3" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="2">
                <graphic>
-                  <ImageView fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="im3" fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@image/placeholder.png" />
                      </image>
@@ -58,7 +58,7 @@
             </Button>
             <Button fx:id="button4" contentDisplay="CENTER" layoutX="170.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onAction="#onButton4" prefHeight="80.0" prefWidth="80.0" GridPane.rowIndex="1">
                <graphic>
-                  <ImageView fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="im4" fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@image/placeholder.png" />
                      </image>
@@ -67,7 +67,7 @@
             </Button>
             <Button fx:id="button5" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onAction="#onButton5" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <graphic>
-                  <ImageView fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="im5" fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@image/placeholder.png" />
                      </image>
@@ -76,7 +76,7 @@
             </Button>
             <Button fx:id="button6" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onAction="#onButton6" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <graphic>
-                  <ImageView fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="im6" fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@image/placeholder.png" />
                      </image>
@@ -85,7 +85,7 @@
             </Button>
             <Button fx:id="button7" contentDisplay="CENTER" layoutX="170.0" layoutY="90.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onAction="#onButton7" prefHeight="80.0" prefWidth="80.0" GridPane.rowIndex="2">
                <graphic>
-                  <ImageView fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="im7" fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@image/placeholder.png" />
                      </image>
@@ -94,7 +94,7 @@
             </Button>
             <Button fx:id="button8" contentDisplay="CENTER" layoutX="10.0" layoutY="170.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onAction="#onButton8" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <graphic>
-                  <ImageView fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="im8" fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@image/placeholder.png" />
                      </image>
@@ -103,7 +103,7 @@
             </Button>
             <Button fx:id="button9" contentDisplay="CENTER" layoutX="90.0" layoutY="170.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onAction="#onButton9" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <graphic>
-                  <ImageView fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="im9" fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@image/placeholder.png" />
                      </image>
@@ -114,10 +114,10 @@
       </GridPane>
       <HBox alignment="CENTER" prefHeight="70.0" prefWidth="386.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="363.7294921875" />
+            <Text fx:id="textErrors" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="363.7294921875" />
          </children>
       </HBox>
-      <Button mnemonicParsing="false" text="Reiniciar" />
+      <Button fx:id="restartButton" mnemonicParsing="false" onAction="#onRestartButtonClick" text="Reiniciar" />
       <Button fx:id="returnButton" layoutX="279.0" layoutY="378.0" mnemonicParsing="false" onAction="#onReturnButtonClick" text="Regresar" />
    </children>
 </VBox>
