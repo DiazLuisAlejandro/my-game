@@ -16,9 +16,9 @@ import javafx.stage.Stage;
 
 public class menu5Controller {
 
-    int[][] matriz = new int[3][3];
+    static int[][] matriz = new int[3][3];
 
-    HashSet<Integer> positionsHashSet=new HashSet<>();    
+    HashSet<Integer> positionsHashSet = new HashSet<>();
 
     Image imageO = new Image(getClass().getResource("/es/ies/puerto/image/O.png").toString());
 
@@ -113,8 +113,17 @@ public class menu5Controller {
         }
         im1.setImage(imageO);
         matriz[0][0] = 1;
-        rivalTurn(1);
-        win(1);
+        rivalTurn();
+        Integer resultado = win();
+        if (resultado != null) {
+            if (resultado == 1) {
+                textTurn.setText("¡Has ganado!");
+            } else if (resultado == 2) {
+                textTurn.setText("¡Ha ganado el rival!");
+            } else if (resultado == 0) {
+                textTurn.setText("Empate.");
+            }
+        }
     }
 
     @FXML
@@ -124,8 +133,17 @@ public class menu5Controller {
         }
         im2.setImage(imageO);
         matriz[0][1] = 1;
-        rivalTurn(2);
-        win(2);
+        rivalTurn();
+        Integer resultado = win();
+        if (resultado != null) {
+            if (resultado == 1) {
+                textTurn.setText("¡Has ganado!");
+            } else if (resultado == 2) {
+                textTurn.setText("¡Ha ganado el rival!");
+            } else if (resultado == 0) {
+                textTurn.setText("Empate.");
+            }
+        }
     }
 
     @FXML
@@ -135,8 +153,17 @@ public class menu5Controller {
         }
         im3.setImage(imageO);
         matriz[0][2] = 1;
-        rivalTurn(3);
-        win(3);
+        rivalTurn();
+        Integer resultado = win();
+        if (resultado != null) {
+            if (resultado == 1) {
+                textTurn.setText("¡Has ganado!");
+            } else if (resultado == 2) {
+                textTurn.setText("¡Ha ganado el rival!");
+            } else if (resultado == 0) {
+                textTurn.setText("Empate.");
+            }
+        }
     }
 
     @FXML
@@ -146,8 +173,17 @@ public class menu5Controller {
         }
         im4.setImage(imageO);
         matriz[1][0] = 1;
-        rivalTurn(4);
-        win(4);
+        rivalTurn();
+        Integer resultado = win();
+        if (resultado != null) {
+            if (resultado == 1) {
+                textTurn.setText("¡Has ganado!");
+            } else if (resultado == 2) {
+                textTurn.setText("¡Ha ganado el rival!");
+            } else if (resultado == 0) {
+                textTurn.setText("Empate.");
+            }
+        }
     }
 
     @FXML
@@ -157,8 +193,17 @@ public class menu5Controller {
         }
         im5.setImage(imageO);
         matriz[1][1] = 1;
-        rivalTurn(5);
-        win(5);
+        rivalTurn();
+        Integer resultado = win();
+        if (resultado != null) {
+            if (resultado == 1) {
+                textTurn.setText("¡Has ganado!");
+            } else if (resultado == 2) {
+                textTurn.setText("¡Ha ganado el rival!");
+            } else if (resultado == 0) {
+                textTurn.setText("Empate.");
+            }
+        }
     }
 
     @FXML
@@ -168,8 +213,17 @@ public class menu5Controller {
         }
         im6.setImage(imageO);
         matriz[1][2] = 1;
-        rivalTurn(6);
-        win(6);
+        rivalTurn();
+        Integer resultado = win();
+        if (resultado != null) {
+            if (resultado == 1) {
+                textTurn.setText("¡Has ganado!");
+            } else if (resultado == 2) {
+                textTurn.setText("¡Ha ganado el rival!");
+            } else if (resultado == 0) {
+                textTurn.setText("Empate.");
+            }
+        }
     }
 
     @FXML
@@ -179,8 +233,17 @@ public class menu5Controller {
         }
         im7.setImage(imageO);
         matriz[2][0] = 1;
-        rivalTurn(7);
-        win(7);
+        rivalTurn();
+        Integer resultado = win();
+        if (resultado != null) {
+            if (resultado == 1) {
+                textTurn.setText("¡Has ganado!");
+            } else if (resultado == 2) {
+                textTurn.setText("¡Ha ganado el rival!");
+            } else if (resultado == 0) {
+                textTurn.setText("Empate.");
+            }
+        }
     }
 
     @FXML
@@ -190,8 +253,18 @@ public class menu5Controller {
         }
         im8.setImage(imageO);
         matriz[2][1] = 1;
-        rivalTurn(8);
-        win(8);
+        rivalTurn();
+        Integer resultado = win();
+        if (resultado != null) {
+            if (resultado == 1) {
+                textTurn.setText("¡Has ganado!");
+            } else if (resultado == 2) {
+                textTurn.setText("¡Ha ganado el rival!");
+            } else if (resultado == 0) {
+                textTurn.setText("Empate.");
+            }
+
+        }
     }
 
     @FXML
@@ -201,8 +274,17 @@ public class menu5Controller {
         }
         im9.setImage(imageO);
         matriz[2][2] = 1;
-        rivalTurn(9);
-        win(9);
+        rivalTurn();
+        Integer resultado = win();
+        if (resultado != null) {
+            if (resultado == 1) {
+                textTurn.setText("¡Has ganado!");
+            } else if (resultado == 2) {
+                textTurn.setText("¡Ha ganado el rival!");
+            } else if (resultado == 0) {
+                textTurn.setText("Empate.");
+            }
+        }
     }
 
     @FXML
@@ -224,28 +306,112 @@ public class menu5Controller {
         textTurn.setText("Tu turno");
     }
 
-    private void rivalTurn(int value) {
-        
-    }
+    public void rivalTurn() {
+        int mejorMove = Integer.MIN_VALUE;
+        int[] move = { -1, -1 };
 
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (matriz[i][j] == 0) {
+                    matriz[i][j] = 2;
+                    int moveToDo = minimax(0, false);
+                    matriz[i][j] = 0;
 
-    private void win(int value){
-        positionsHashSet.add(value);
-        if (positionsHashSet.size()<3) {
-            
-        }else{
-            for (int i : positionsHashSet) {
-                
-            }
-            if (true) {
-                textTurn.setText("Has ganado");
-                
-            }if (positionsHashSet.contains(0)) {
-                textTurn.setText("Has perdido");
-
-            }else{
-                textTurn.setText("Has empatado");
+                    if (moveToDo > mejorMove) {
+                        mejorMove = moveToDo;
+                        move[0] = i;
+                        move[1] = j;
+                        matriz[move[0]][move[1]] = 2;
+                        rellenarImangen(move[0], move[1]);
+                    }
+                }
             }
         }
+
     }
+
+    public static int minimax(int depth, boolean isMaximizing) {
+        Integer result = win();
+        if (result != null) {
+            return result;
+        }
+
+        if (isMaximizing) {
+            int best = Integer.MIN_VALUE;
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if (matriz[i][j] == 0) {
+                        matriz[i][j] = 2;
+                        best = Math.max(best, minimax(depth + 1, false));
+                        matriz[i][j] = 0;
+                    }
+                }
+            }
+            return best;
+        } else {
+            int best = Integer.MAX_VALUE;
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if (matriz[i][j] == 0) {
+                        matriz[i][j] = 1;
+                        best = Math.min(best, minimax(depth + 1, true));
+                        matriz[i][j] = 0;
+                    }
+                }
+            }
+            return best;
+        }
+    }
+
+    public static Integer win() {
+        int[][] filas = {
+                { 0, 0, 0, 1, 0, 2 },
+                { 1, 0, 1, 1, 1, 2 },
+                { 2, 0, 2, 1, 2, 2 },
+                { 0, 0, 1, 0, 2, 0 },
+                { 0, 1, 1, 1, 2, 1 },
+                { 0, 2, 1, 2, 2, 2 },
+                { 0, 0, 1, 1, 2, 2 },
+                { 0, 2, 1, 1, 2, 0 }
+        };
+
+        for (int[] fila : filas) {
+            int pos1 = matriz[fila[0]][fila[1]];
+            int pos2 = matriz[fila[2]][fila[3]];
+            int pos3 = matriz[fila[4]][fila[5]];
+            if (pos1 == pos2 && pos1 == pos3 && pos1 != 0) {
+                return pos1;
+            }
+        }
+
+        boolean lleno = true;
+        for (int[] fila : matriz)
+            for (int celda : fila)
+                if (celda == 0)
+                    lleno = false;
+
+        return lleno ? 0 : null;
+    }
+
+    private void rellenarImangen(int row, int col) {
+        if (row == 0 && col == 0)
+            im1.setImage(imageX);
+        else if (row == 0 && col == 1)
+            im2.setImage(imageX);
+        else if (row == 0 && col == 2)
+            im3.setImage(imageX);
+        else if (row == 1 && col == 0)
+            im4.setImage(imageX);
+        else if (row == 1 && col == 1)
+            im5.setImage(imageX);
+        else if (row == 1 && col == 2)
+            im6.setImage(imageX);
+        else if (row == 2 && col == 0)
+            im7.setImage(imageX);
+        else if (row == 2 && col == 1)
+            im8.setImage(imageX);
+        else if (row == 2 && col == 2)
+            im9.setImage(imageX);
+    }
+
 }
